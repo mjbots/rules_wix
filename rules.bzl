@@ -26,9 +26,9 @@ def _pkg_msi_impl(ctx):
         inputs = [ctx.file.src] + my_deps,
         executable = ctx.executable._candle,
         arguments = [
-            "-nologo", 
+            "-nologo",
             "-arch", ctx.attr.arch,
-            "-o", obj.path, 
+            "-o", obj.path,
             ctx.file.src.path],
     )
 
@@ -51,7 +51,7 @@ pkg_msi = rule(
     implementation = _pkg_msi_impl,
     attrs = {
         "src" : attr.label(allow_single_file = True),
-        "deps" : attr.label_list(),
+        "deps" : attr.label_list(allow_files = True),
         "exts" : attr.string_list(),
         "arch" : attr.string(default = "x64"),
         "_candle" : attr.label(
