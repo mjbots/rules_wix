@@ -1,6 +1,6 @@
 # WiX Toolset support for Bazel #
 
-This package provides bazel (https://bazel.build) rules for building 
+This package provides bazel (https://bazel.build) rules for building
 Microsoft Windows .msi installers using the WiX Toolset.
 
 * License: Apache 2.0
@@ -25,7 +25,7 @@ http_archive(
 )
 
 load("@rules_wix//:deps.bzl", "add_wix_deps")
-add_wix_deps();
+add_wix_deps()
 ```
 
 Then in a BUILD file you can use:
@@ -35,14 +35,14 @@ load("@rules_wix//:rules.bzl", "pkg_msi")
 
 pkg_msi(
   name = "example.msi",
-  srcs = ["example.wxs"],
+  src = "example.wxs",
   deps = [
     # ...
   ],
   arch = "x64",
-  exts = [ 
-    "WixUiExtension", 
-    # ... 
+  exts = [
+    "WixUiExtension",
+    # ...
   ],
 )
 ```
