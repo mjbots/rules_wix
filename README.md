@@ -16,7 +16,7 @@ RULES_WIX_COMMIT = "XXX"
 
 http_archive(
     name = "rules_wix",
-    url = "https://github.com/mjbots/rules_wix/{}.zip".format(RULES_WIX_COMMIT),
+    url = "https://github.com/mjbots/rules_wix/archive/{}.zip".format(RULES_WIX_COMMIT),
 
     # Replace this with the value from the bazel error message.
     sha256 = "0000000000000000000000000000000000000000000000000000000000000000",
