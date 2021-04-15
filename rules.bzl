@@ -38,7 +38,7 @@ def _pkg_msi_impl(ctx):
 
     ctx.actions.run(
         outputs = [out],
-        inputs = [obj],
+        inputs = [obj] + my_deps,
         executable = ctx.executable._light,
         arguments = ["-nologo"] + exts + ["-out", out.path, obj.path],
     )
